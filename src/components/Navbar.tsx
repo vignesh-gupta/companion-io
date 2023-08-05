@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 const poppins = Poppins({ weight: ["600"], subsets: ["latin"] });
 const Navbar = () => {
   return (
-    <div className="fixed z-50 flex items-center justify-between w-full px-4 py-2 border-b border-b-primary/10 bg-secondary">
+    <header className="fixed z-50 flex items-center justify-between w-full h-16 px-4 py-2 border-b border-b-primary/10 bg-secondary">
       <div className="flex items-center">
         <Menu className="block md:hidden" />
 
@@ -35,7 +35,7 @@ const Navbar = () => {
         <ThemeToggle />
         <UserButton afterSignOutUrl="/" />
       </div>
-    </div>
+    </header>
   );
 };
 
