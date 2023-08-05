@@ -1,21 +1,21 @@
 "use client";
 
 import { UserButton } from "@clerk/nextjs";
-import { Menu, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { Button } from "@ui/button";
 import { ThemeToggle } from "./ui/theme-toggle";
 import { Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
+import MobilSidebar from "./MobilSidebar";
 
 const poppins = Poppins({ weight: ["600"], subsets: ["latin"] });
 const Navbar = () => {
   return (
     <header className="fixed z-50 flex items-center justify-between w-full h-16 px-4 py-2 border-b border-b-primary/10 bg-secondary">
       <div className="flex items-center">
-        <Menu className="block md:hidden" />
-
+        <MobilSidebar />
         <Link href="/">
           <h1
             className={cn(
