@@ -8,7 +8,7 @@ import { Button } from "@ui/button";
 import { ThemeToggle } from "./ui/theme-toggle";
 import { Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
-import MobilSidebar from "./MobilSidebar";
+import MobilSidebar from "./MobileSidebar";
 
 const poppins = Poppins({ weight: ["600"], subsets: ["latin"] });
 const Navbar = () => {
