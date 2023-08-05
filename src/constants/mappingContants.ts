@@ -10,7 +10,7 @@ export const routes: Route[] = [
   },
   {
     icon: Plus,
-    href: "/create",
+    href: "/companion/new",
     label: "Create",
     pro: true,
   },
