@@ -15,7 +15,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="flex flex-col h-full space-y-4 text-primary bg-secondary">
+    <div className="flex flex-col h-full space-y-4 text-primary bg-secondary md:border-r-2 border-primary/10">
       <div className="flex justify-center flex-1 p-3">
         <div className="space-y-2">
           {routes.map((route, index) => (

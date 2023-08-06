@@ -4,6 +4,7 @@ import { formSchema } from "@/lib/utils";
 import { Category, Companion } from "@prisma/client";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+import axios from "axios";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
@@ -23,6 +24,8 @@ import { Textarea } from "@ui/textarea";
 import { PREAMBLE, SEED_CHAT } from "@/constants";
 import { Button } from "./ui/button";
 import { Wand2 } from "lucide-react";
+import { useToast } from "@ui/use-toast";
+import { useRouter } from "next/navigation";
 
 type CompanionFormProps = {
   initialData: Companion | null;
@@ -30,6 +33,10 @@ type CompanionFormProps = {
 };
 
 const CompanionForm = ({ initialData, categories }: CompanionFormProps) => {
+  const { toast } = useToast();
+
+  const router = useRouter();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: initialData || {
@@ -46,6 +53,27 @@ const CompanionForm = ({ initialData, categories }: CompanionFormProps) => {
 
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     console.log(data);
+
+    try {
+      if (initialData) {
+        await axios.patch(`/api/companions/${initialData.id}`, data);
+      } else {
+        await axios.post(`/api/companions`, data);
+      }
+
+      toast({
+        description: "Successfully saved",
+      });
+      router.refresh();
+      router.push("/");
+    } catch (error) {
+      console.log("Error", error);
+
+      toast({
+        variant: "destructive",
+        description: "Something went wrong",
+      });
+    }
   };
 
   return (
@@ -220,7 +248,7 @@ const CompanionForm = ({ initialData, categories }: CompanionFormProps) => {
           <div className="flex justify-center w-full">
             <Button size="lg" type="submit" disabled={isLoading}>
               {initialData ? "Update Companion" : "Create Companion"}
-              <Wand2 className="w-4 h-4 ml-2"/>
+              <Wand2 className="w-4 h-4 ml-2" />
             </Button>
           </div>
         </form>
