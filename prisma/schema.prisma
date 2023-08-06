@@ -35,7 +35,7 @@ model Companion {
   updatedAt    DateTime  @updatedAt
   categories   Category  @relation(fields: [categoryId], references: [id])
   categoryId   String
-  Message      Message[]
+  messages     Message[]
 
   @@index([categoryId])
 }
