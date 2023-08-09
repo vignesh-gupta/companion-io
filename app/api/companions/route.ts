@@ -7,14 +7,11 @@ export async function POST(req: Request) {
     const body = await req.json();
     const user = await currentUser();
     const { src, name, description, seed, categoryId, instructions } = body;
-    
+
     if (!user || !user.id || !user.firstName) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
-    console.log("Line 15");
-    
-    
     if (
       !src ||
       !name ||
@@ -25,7 +22,6 @@ export async function POST(req: Request) {
     ) {
       return new NextResponse("Missing Required fields", { status: 400 });
     }
-    console.log("Line 28");
 
     // TODO: Check for subscription
 
@@ -41,12 +37,10 @@ export async function POST(req: Request) {
         instructions,
       },
     });
-    console.log("Line 44");
 
     return NextResponse.json(companion);
-
   } catch (error) {
     console.log("COMPANIONS POST ROUTE ERROR: ", error);
-    return new NextResponse("Internal server Error" ,{ status: 500 });
+    return new NextResponse("Internal server Error", { status: 500 });
   }
 }

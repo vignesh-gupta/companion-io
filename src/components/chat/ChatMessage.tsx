@@ -1,24 +1,65 @@
-"use client"
+"use client";
 
-import React from 'react'
-import { useToast } from '../ui/use-toast';
-import { useTheme } from 'next-themes';
+import React from "react";
+import { useToast } from "../ui/use-toast";
+import { useTheme } from "next-themes";
+import { cn } from "@/lib/utils";
+import BotAvatar from "./BotAvatar";
+import { BeatLoader } from "react-spinners";
+import UserAvatar from "./UserAvatar";
+import { Button } from "../ui/button";
+import { Copy } from "lucide-react";
 
-type ChatMessageProps = {
+export type ChatMessageProps = {
   role: "user" | "system";
-  content: string;
-  isLoading: boolean;
-  src? : string;
-}
+  content?: string;
+  isLoading?: boolean;
+  src?: string;
+};
 
-const ChatMessage = ({role , content , isLoading , src} : ChatMessageProps) => {
-
+const ChatMessage = ({ role, content, isLoading, src }: ChatMessageProps) => {
   const { toast } = useToast();
   const { theme } = useTheme();
 
-  return (
-    <div>ChatMessage</div>
-  )
-}
+  const onCopy = () => {
+    if (!content) return;
 
-export default ChatMessage
+    navigator.clipboard.writeText(content);
+    toast({
+      description: "Copied to clipboard!",
+    });
+  };
+  
+
+  return (
+    <div
+      className={cn(
+        "group flex items-start gap-x-3 py-4 w-full",
+        role === "user" && "justify-end"
+      )}
+    >
+      {role === "system" && src && <BotAvatar src={src} />}
+      <div className="rounded-md px-4 py-2 max-w-sm text-sm bg-primary/10">
+        {isLoading ? (
+          <BeatLoader color={"#84847F"} size={5} />
+        ) : (
+          content
+        )}
+      </div>
+
+      {role === "user" && <UserAvatar />}
+      {role !== "user" && !isLoading && (
+        <Button
+          onClick={onCopy}
+          className="opacity-0 group-hover:opacity-100 transition"
+          size="icon"
+          variant="ghost"
+        >
+          <Copy className="w-4 h-4" />
+        </Button>
+      )}
+    </div>
+  );
+};
+
+export default ChatMessage;
