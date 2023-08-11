@@ -37,7 +37,7 @@ const ChatMessages = ({
   } , [messages.length])
 
   return (
-    <div className="flex-1 overflow-y-auto pr-4">
+    <div className="flex-1 pr-4 overflow-y-auto">
       <ChatMessage
         role="system"
         src={companion.src}
@@ -49,6 +49,7 @@ const ChatMessages = ({
         <ChatMessage 
           key={message.content}
           {...message}
+          src={companion.src}
         />
       ))}
 

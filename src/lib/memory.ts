@@ -45,7 +45,6 @@ export class MemoryManager {
       .catch((err) => {
         console.log("FAILED TO SEARCH FOR SIMILAR DOCS", err);
       });
-
     return similarDocs;
   }
 
@@ -76,7 +75,7 @@ export class MemoryManager {
     return result;
   }
 
-  public async readLastHistory(companionKey: CompanionKey): Promise<string> {
+  public async readLatestHistory(companionKey: CompanionKey): Promise<string> {
     if (!companionKey || typeof companionKey.userId == "undefined") {
       console.log("Companion key set incorrectly");
       return "";
@@ -88,9 +87,7 @@ export class MemoryManager {
     });
 
     result = result.slice(-30).reverse();
-
     const recentChats = result.reverse().join("\n");
-
     return recentChats;
   }
 
