@@ -12,12 +12,16 @@ export async function POST(req: Request) {
   let event: Stripe.Event;
 
   try {
+    // TODO: Remove Log once debugged
+
+    console.debug("Sign", signature);
     event = stripe.webhooks.constructEvent(
       body,
       signature,
       process.env.STRIPE_WEBHOOK_SECRET!
-    );
-  } catch (error: any) {
+      );
+    } catch (error: any) {
+    console.debug("Error", error);
     return new NextResponse(`Webhook Error: ${error.message}`, { status: 400 });
   }
 
