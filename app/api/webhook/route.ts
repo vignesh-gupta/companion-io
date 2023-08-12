@@ -14,14 +14,14 @@ export async function POST(req: Request) {
   try {
     // TODO: Remove Log once debugged
 
-    console.debug("Sign", signature);
+    console.info("Sign", signature);
     event = stripe.webhooks.constructEvent(
       body,
       signature,
       process.env.STRIPE_WEBHOOK_SECRET!
       );
     } catch (error: any) {
-    console.debug("Error", error);
+    console.error("Error", error);
     return new NextResponse(`Webhook Error: ${error.message}`, { status: 400 });
   }
 
