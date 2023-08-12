@@ -58,7 +58,7 @@ export async function PATCH(
 
     return NextResponse.json(companion);
   } catch (error) {
-    console.log("[COMPANIONS_PATCH_ROUTE_ERROR]: ", error);
+    console.error("[COMPANIONS_PATCH_ROUTE_ERROR]: ", error);
     return new NextResponse("Internal server Error", { status: 500 });
   }
 }
@@ -88,7 +88,7 @@ export async function DELETE(
     return NextResponse.json(companion);
 
   } catch (error) {
-    console.log("[COMPANIONS_DELETE_ROUTE_ERROR]: ", error);
+    console.error("[COMPANIONS_DELETE_ROUTE_ERROR]: ", error);
     return new NextResponse("Internal server Error", { status: 500 });
   }
 }

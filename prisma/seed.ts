@@ -15,7 +15,7 @@ async function main() {
     ]
   })
 
-  console.log(res);
+  console.info(res);
   
 }
 

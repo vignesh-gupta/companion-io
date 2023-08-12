@@ -52,7 +52,7 @@ const CompanionForm = ({ initialData, categories }: CompanionFormProps) => {
   const isLoading = form.formState.isSubmitting;
 
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
-    console.log(data);
+    console.info(data);
 
     try {
       if (initialData) {
@@ -67,7 +67,7 @@ const CompanionForm = ({ initialData, categories }: CompanionFormProps) => {
       router.refresh();
       router.push("/");
     } catch (error) {
-      console.log("Error", error);
+      console.error("Error", error);
 
       toast({
         variant: "destructive",

@@ -43,7 +43,7 @@ export class MemoryManager {
     const similarDocs = await vectorStore
       .similaritySearch(recentChatHistory, 3, { fileName: companionFileName })
       .catch((err) => {
-        console.log("FAILED TO SEARCH FOR SIMILAR DOCS", err);
+        console.error("FAILED TO SEARCH FOR SIMILAR DOCS", err);
       });
     return similarDocs;
   }
@@ -62,7 +62,7 @@ export class MemoryManager {
 
   public async writeToHistory(text: string, companionKey: CompanionKey) {
     if (!companionKey || typeof companionKey.userId == "undefined") {
-      console.log("Companion key set incorrectly");
+      console.error("Companion key set incorrectly");
       return "";
     }
 
@@ -77,7 +77,7 @@ export class MemoryManager {
 
   public async readLatestHistory(companionKey: CompanionKey): Promise<string> {
     if (!companionKey || typeof companionKey.userId == "undefined") {
-      console.log("Companion key set incorrectly");
+      console.error("Companion key set incorrectly");
       return "";
     }
 
@@ -99,7 +99,7 @@ export class MemoryManager {
     const key = this.generateRedisCompanionKey(companionKey);
 
     if (await this.history.exists(key)) {
-      console.log("Chat history already exists");
+      console.info("Chat history already exists");
       return;
     }
 

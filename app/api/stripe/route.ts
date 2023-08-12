@@ -64,7 +64,7 @@ export async function GET() {
 
     
   } catch (error) {
-    console.log("STRIPE_ERROR: ", error);
+    console.error("STRIPE_ERROR: ", error);
     return new NextResponse("Internal Server Error", { status: 500 });
   }
 }

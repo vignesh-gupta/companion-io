@@ -33,7 +33,7 @@ export async function POST(req: Request) {
     );
 
     if (!session?.metadata?.userId) {
-      console.log("UserId is missing");
+      console.error("UserId is missing");
 
       return new NextResponse("UserId is missing", { status: 400 });
     }

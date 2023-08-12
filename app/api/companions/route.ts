@@ -46,7 +46,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json(companion);
   } catch (error) {
-    console.log("COMPANIONS POST ROUTE ERROR: ", error);
+    console.error("COMPANIONS POST ROUTE ERROR: ", error);
     return new NextResponse("Internal server Error", { status: 500 });
   }
 }
