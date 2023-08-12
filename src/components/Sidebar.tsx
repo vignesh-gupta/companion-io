@@ -4,13 +4,17 @@ import { routes } from "@/constants/mappingContants";
 import { cn } from "@/lib/utils";
 import React from "react";
 import { usePathname, useRouter } from "next/navigation";
+import { useProModal } from "@/hooks/useProModal";
 
-const Sidebar = () => {
+const Sidebar = ({ isPro }: { isPro: boolean }) => {
   const pathName = usePathname();
   const router = useRouter();
+  const { onOpen } = useProModal();
 
   const onNavigate = (url: string, pro: boolean) => {
     // Check if the user has pro subscription
+    if (pro && !isPro) return onOpen();
+
     return router.push(url);
   };
 

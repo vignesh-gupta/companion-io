@@ -1,4 +1,5 @@
 import prisma from "@/lib/prisma";
+import { checkSubscription } from "@/lib/subscription";
 import { auth, currentUser } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 
@@ -30,7 +31,13 @@ export async function PATCH(
       return new NextResponse("Missing Required fields", { status: 400 });
     }
 
-    // TODO: Check for subscription
+    // Checking for subscription
+    const isPro = await checkSubscription();
+
+    if(!isPro) {
+      return new NextResponse("Pro Subscription required", { status: 403 });
+    }
+
 
     const companion = await prisma.companion.update({
       where: {
