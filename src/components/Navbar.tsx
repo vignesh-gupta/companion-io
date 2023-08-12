@@ -19,7 +19,7 @@ const Navbar = ({ isPro }: { isPro: boolean }) => {
   return (
     <header className="fixed z-50 flex items-center justify-between w-full h-16 px-4 py-2 border-b border-b-primary/10 bg-secondary">
       <div className="flex items-center">
-        <MobilSidebar />
+        <MobilSidebar isPro={isPro} />
         <Link href="/">
           <h1
             className={cn(

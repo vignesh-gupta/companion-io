@@ -11,7 +11,7 @@ import { Menu } from "lucide-react";
 import Sidebar from "./Sidebar";
 
 
-const MobilSidebar = () => {
+const MobilSidebar = ({ isPro }: { isPro: boolean }) => {
   return (
     <div>
       <Sheet>
@@ -19,7 +19,7 @@ const MobilSidebar = () => {
           <Menu className="block md:hidden" />
         </SheetTrigger>
         <SheetContent side='left' className="p-0 pt-10 bg-secondary w-fit">
-          <Sidebar />
+          <Sidebar isPro={isPro} />
         </SheetContent>
       </Sheet>
     </div>
