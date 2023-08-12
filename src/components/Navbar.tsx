@@ -9,9 +9,13 @@ import { ThemeToggle } from "./ui/theme-toggle";
 import { Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
 import MobilSidebar from "./MobileSidebar";
+import { useProModal } from "@/hooks/useProModal";
 
 const poppins = Poppins({ weight: ["600"], subsets: ["latin"] });
-const Navbar = () => {
+
+const Navbar = ({ isPro }: { isPro: boolean }) => {
+  const { onOpen } = useProModal();
+
   return (
     <header className="fixed z-50 flex items-center justify-between w-full h-16 px-4 py-2 border-b border-b-primary/10 bg-secondary">
       <div className="flex items-center">
@@ -29,9 +33,11 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center gap-x-3">
-        <Button size="sm" variant="premium">
-          Upgrade <Sparkles className="w-4 h-4 ml-2 text-white fill-white" />
-        </Button>
+        {!isPro && (
+          <Button size="sm" variant="premium" onClick={onOpen}>
+            Upgrade <Sparkles className="w-4 h-4 ml-2 text-white fill-white" />
+          </Button>
+        )}
         <ThemeToggle />
         <UserButton afterSignOutUrl="/" />
       </div>

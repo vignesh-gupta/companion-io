@@ -5,7 +5,7 @@ import prisma from "@/lib/prisma";
 import { stripe } from "@/lib/stripe";
 
 export async function POST(req: Request) {
-  const body = await req.json();
+  const body = await req.text();
 
   const signature = headers().get("Stripe-Signature") as string;
 
@@ -17,8 +17,8 @@ export async function POST(req: Request) {
       signature,
       process.env.STRIPE_WEBHOOK_SECRET!
     );
-  } catch (err) {
-    return new NextResponse("Invalid signature", { status: 400 });
+  } catch (error: any) {
+    return new NextResponse(`Webhook Error: ${error.message}`, { status: 400 });
   }
 
   const session = event.data.object as Stripe.Checkout.Session;
@@ -29,6 +29,8 @@ export async function POST(req: Request) {
     );
 
     if (!session?.metadata?.userId) {
+      console.log("UserId is missing");
+
       return new NextResponse("UserId is missing", { status: 400 });
     }
 
@@ -61,7 +63,6 @@ export async function POST(req: Request) {
         ),
       },
     });
-
   }
   return new NextResponse(null, { status: 200 });
 }
