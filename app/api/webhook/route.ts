@@ -3,7 +3,10 @@ import Stripe from "stripe";
 import { headers } from "next/headers";
 import prisma from "@/lib/prisma";
 import { stripe } from "@/lib/stripe";
-import { checkoutSessionCompleted, invoicePaymentSucceeded } from "./_utils";
+import {
+  checkoutSessionCompleted,
+  invoicePaymentSucceeded,
+} from "./_utils";
 
 export async function POST(req: Request) {
   const body = await req.text();
@@ -31,8 +34,6 @@ export async function POST(req: Request) {
     case "invoice.payment_succeeded":
       await invoicePaymentSucceeded(session);
       break;
-    default:
-      console.warn(`Unhandled event type ${event.type}`);
   }
   return new NextResponse(null, { status: 200 });
 }
