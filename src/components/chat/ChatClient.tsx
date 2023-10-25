@@ -44,13 +44,15 @@ const ChatClient = ({ companion }: ChatClientProps) => {
       content: input,
     };
 
+    setInput("");
+
     setMessages((current) => [...current, userMessage]);
 
     handleSubmit(event);
   };
 
   return (
-    <div className="flex flex-col space-y-2 p-4 h-full">
+    <div className="flex flex-col h-full p-4 space-y-2">
       <ChatHeader companion={companion} />
 
       <ChatMessages 

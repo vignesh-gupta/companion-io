@@ -29,7 +29,7 @@ const ChatForm = ({
   return (
     <form
       onSubmit={onSubmit}
-      className="border-t border-primary/10 py-4 flex items-center gap-x-2 "
+      className="flex items-center py-4 border-t border-primary/10 gap-x-2 "
     >
       <Input
         disabled={isLoading}
@@ -39,7 +39,7 @@ const ChatForm = ({
         className="rounded-lg bg-primary/10"
       />
       <Button disabled={isLoading} variant='ghost'>
-        <SendHorizonal className="h-6 w-6" />
+        <SendHorizonal className="w-6 h-6" />
       </Button>
     </form>
   );
