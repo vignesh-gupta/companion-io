@@ -1,5 +1,6 @@
 # Companion IO
 
+![companion-io](https://github.com/vignesh-gupta/companion-io/assets/52371759/3708d97b-409f-49fe-97a6-2b599b9c848d)
 
 
 ## Intro
