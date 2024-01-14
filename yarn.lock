@@ -256,7 +256,7 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@langchain/community@~0.0.15":
+"@langchain/community@^0.0.17", "@langchain/community@~0.0.15":
   version "0.0.17"
   resolved "https://registry.yarnpkg.com/@langchain/community/-/community-0.0.17.tgz#a66c45bdd9e7699e0591720a62d4caaf559f4834"
   integrity sha512-BI7WJv3rtIbmKrvUNeTaxGGrz8jnu4boLnpl+4cH3WE2lrKTdzuvp6Ot4dACowWInvNSfXcdMzG3BrtTMSaDcQ==
@@ -3822,6 +3822,7 @@ streamsearch@^1.1.0:
   integrity sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
