@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   keywords: ["Companion", "AI", "Person", "Imaginary", "Create", "Personal" , "Personality", "Vignesh" , "dud3-droid" , "dud3" , "gupta" ],
   authors: {
     name: "Vignesh Gupta",
-    url: "http://vigneshgupta.netlify.app/",
+    url: "http://vigneshgupta.tech/",
   },
   openGraph: {
     type: "website",
@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     images: "/logo.png",
   },
   creator: 'Vignesh Gupta',
+  metadataBase: new URL("https://companionio.vigneshgupta.tech/")
 };
 
 export default function RootLayout({
