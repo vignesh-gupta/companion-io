@@ -46,7 +46,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.48.2",
     "react-spinners": "^0.13.8",
-    "replicate": "^0.25.2",
+    "replicate": "^0.29.1",
     "stripe": "^14.12.0",
     "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7",
