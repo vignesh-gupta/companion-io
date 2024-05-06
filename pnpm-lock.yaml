@@ -13,7 +13,7 @@ dependencies:
     version: 3.3.2(react-hook-form@7.48.2)
   '@langchain/community':
     specifier: ^0.0.17
-    version: 0.0.17(@pinecone-database/pinecone@1.1.3)(@upstash/redis@1.25.1)(replicate@0.25.2)
+    version: 0.0.17(@pinecone-database/pinecone@1.1.3)(@upstash/redis@1.25.1)(replicate@0.29.4)
   '@pinecone-database/pinecone':
     specifier: ^1.1.3
     version: 1.1.3
@@ -70,7 +70,7 @@ dependencies:
     version: 16.3.1
   langchain:
     specifier: ^0.1.2
-    version: 0.1.28(@pinecone-database/pinecone@1.1.3)(@upstash/redis@1.25.1)(axios@1.6.2)(replicate@0.25.2)
+    version: 0.1.28(@pinecone-database/pinecone@1.1.3)(@upstash/redis@1.25.1)(axios@1.6.2)(replicate@0.29.4)
   lucide-react:
     specifier: ^0.309.0
     version: 0.309.0(react@18.2.0)
@@ -108,8 +108,8 @@ dependencies:
     specifier: ^0.13.8
     version: 0.13.8(react-dom@18.2.0)(react@18.2.0)
   replicate:
-    specifier: ^0.25.2
-    version: 0.25.2
+    specifier: ^0.29.4
+    version: 0.29.4
   stripe:
     specifier: ^14.12.0
     version: 14.22.0
@@ -463,7 +463,7 @@ packages:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  /@langchain/community@0.0.17(@pinecone-database/pinecone@1.1.3)(@upstash/redis@1.25.1)(replicate@0.25.2):
+  /@langchain/community@0.0.17(@pinecone-database/pinecone@1.1.3)(@upstash/redis@1.25.1)(replicate@0.29.4):
     resolution: {integrity: sha512-BI7WJv3rtIbmKrvUNeTaxGGrz8jnu4boLnpl+4cH3WE2lrKTdzuvp6Ot4dACowWInvNSfXcdMzG3BrtTMSaDcQ==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -712,14 +712,14 @@ packages:
       '@upstash/redis': 1.25.1
       flat: 5.0.2
       langsmith: 0.0.48
-      replicate: 0.25.2
+      replicate: 0.29.4
       uuid: 9.0.1
       zod: 3.22.4
     transitivePeerDependencies:
       - encoding
     dev: false
 
-  /@langchain/community@0.0.41(@pinecone-database/pinecone@1.1.3)(@upstash/redis@1.25.1)(replicate@0.25.2):
+  /@langchain/community@0.0.41(@pinecone-database/pinecone@1.1.3)(@upstash/redis@1.25.1)(replicate@0.29.4):
     resolution: {integrity: sha512-8QvA/Gx95ijUxmH3amj1La6Rl9NmMCnif802q/Y2zze+SW2bgeF7brC6n2BIui2GYUQlCDBoga/QZ2lPqPM6vg==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -999,7 +999,7 @@ packages:
       expr-eval: 2.0.2
       flat: 5.0.2
       langsmith: 0.1.14
-      replicate: 0.25.2
+      replicate: 0.29.4
       uuid: 9.0.1
       zod: 3.22.4
     transitivePeerDependencies:
@@ -3239,6 +3239,7 @@ packages:
   /event-target-shim@5.0.1:
     resolution: {integrity: sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==}
     engines: {node: '>=6'}
+    requiresBuild: true
     dev: false
 
   /eventemitter3@4.0.7:
@@ -3888,7 +3889,7 @@ packages:
       json-buffer: 3.0.1
     dev: true
 
-  /langchain@0.1.28(@pinecone-database/pinecone@1.1.3)(@upstash/redis@1.25.1)(axios@1.6.2)(replicate@0.25.2):
+  /langchain@0.1.28(@pinecone-database/pinecone@1.1.3)(@upstash/redis@1.25.1)(axios@1.6.2)(replicate@0.29.4):
     resolution: {integrity: sha512-LNuILtOSFptfOqDwUwQAl7B0dYrBtxzVZ6lDhc5DA8rk+pyTCy12HQO7t8bGqC8oQlEPYPKaom8VRlvfupUBTw==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -4048,7 +4049,7 @@ packages:
         optional: true
     dependencies:
       '@anthropic-ai/sdk': 0.9.1
-      '@langchain/community': 0.0.41(@pinecone-database/pinecone@1.1.3)(@upstash/redis@1.25.1)(replicate@0.25.2)
+      '@langchain/community': 0.0.41(@pinecone-database/pinecone@1.1.3)(@upstash/redis@1.25.1)(replicate@0.29.4)
       '@langchain/core': 0.1.49
       '@langchain/openai': 0.0.23
       '@pinecone-database/pinecone': 1.1.3
@@ -4961,8 +4962,8 @@ packages:
       set-function-name: 2.0.1
     dev: true
 
-  /replicate@0.25.2:
-    resolution: {integrity: sha512-c5otBJ5E66XLS0X196pBCsyy85b03ZBLeV/lbKfU8cqfkt3Qd6NGEiPwTtxtsQ4AznggMJNn2Qq68t/bV85M2w==}
+  /replicate@0.29.4:
+    resolution: {integrity: sha512-BizXBehB2Rjil3o2R9Vy9fd0k3w7aIoXtc/+vdOmitC2viW3pSMt0GwC4h+OmMpx9zot90C43wrssyMJ3rMScQ==}
     engines: {git: '>=2.11.0', node: '>=18.0.0', npm: '>=7.19.0', yarn: '>=1.7.0'}
     optionalDependencies:
       readable-stream: 4.5.2
