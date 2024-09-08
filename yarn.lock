@@ -3612,10 +3612,10 @@ regexp.prototype.flags@^1.5.0, regexp.prototype.flags@^1.5.1:
     define-properties "^1.2.0"
     set-function-name "^2.0.0"
 
-replicate@^0.25.2:
-  version "0.25.2"
-  resolved "https://registry.yarnpkg.com/replicate/-/replicate-0.25.2.tgz#e185b039da21c6cbd758cfea8f238d25b347061c"
-  integrity sha512-c5otBJ5E66XLS0X196pBCsyy85b03ZBLeV/lbKfU8cqfkt3Qd6NGEiPwTtxtsQ4AznggMJNn2Qq68t/bV85M2w==
+replicate@^0.30.2:
+  version "0.30.2"
+  resolved "https://registry.yarnpkg.com/replicate/-/replicate-0.30.2.tgz#079dca3bb60b88000955068756c0dc4eb91d51f9"
+  integrity sha512-U3yDrlwAV/zhaCd5Tcb8IPXqwkzvfXbN+YABM6RGPugtmuo8W5uwxoEQAetWD+xjS5jWLzISBYR5gPNBZPLOQw==
   optionalDependencies:
     readable-stream ">=4.0.0"
 
