@@ -114,8 +114,8 @@ importers:
         specifier: ^0.30.2
         version: 0.30.2
       stripe:
-        specifier: ^14.12.0
-        version: 14.22.0
+        specifier: ^16.11.0
+        version: 16.11.0
       tailwind-merge:
         specifier: ^2.2.0
         version: 2.2.2
@@ -3187,8 +3187,8 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
-  stripe@14.22.0:
-    resolution: {integrity: sha512-Pj8SAdTNjMq42UnWzBTTy8KMQ8qbQoVemPHbw3x+rHvwq1Psg9UFPT58j54F5os/SCgUAOZSEMcUedvzIDuqvw==}
+  stripe@16.11.0:
+    resolution: {integrity: sha512-Rl4S2UAU/uWr3diETk3wkpXSe7LBPJ4BdXRzto5XVGGUhvLi8Q0MShwI5yhPH6Cdv2kmLu/Yl14QMlHgeRp7Qw==}
     engines: {node: '>=12.*'}
 
   styled-jsx@5.1.1:
@@ -6220,7 +6220,7 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  stripe@14.22.0:
+  stripe@16.11.0:
     dependencies:
       '@types/node': 20.11.0
       qs: 6.11.2
